@@ -7,7 +7,7 @@ import { HttpClient} from '@angular/common/http'
 export class GitService {
 
   private username: string;
-  private clientid = '' ;
+  private clientid = '428d403d7763336d42a00a4010e6822f702ce5c8' ;
   private clientsecret = '' ;
   constructor(private http:HttpClient) { 
     console.log("your service is ready");
