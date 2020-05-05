@@ -21,7 +21,27 @@
                     <div class="col-sm-5">
                         <ul>
                             <li *ngIf="profile.bio">{{profile.bio}}</li>
+                            <li *ngIf="profile.hirable">{{profile.hirable}}</li>
+                            <li *ngIf="profile.blog">{{profile.blog}}</li>
+                            <li *ngIf="profile.email">{{profile.email}}</li>
                         </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>
+                            <p>
+                                <span class="label one-primary" class="btn btn-danger btn-sm">
+                                <span class="label one-primary" class="btn btn-danger btn-sm">{{profile.follower}}Followed by<br></span>
+                                <span class="label one-primary" class="btn btn-danger btn-sm">{{profile.following}}following<br></span>
+                                <span class="label one-primary" class="btn btn-danger btn-sm"> {{profile.public-gists}} public public-gists<br></span>
+                                <span class="label one-primary" class="btn btn-danger btn-sm"> {{profile.public-repos}} public public-repos</span>
+                            </p>
+                            <div class="one-body" *ngFor="let repo of repos">
+                                <p>
+                                    {{repo.name}}<a href="{{repo.html_url" class="btn btn-warning pull-right">View in github</a>
+                                </p>
+                                <p class="clearfix">{{repo.description}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
