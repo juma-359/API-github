@@ -6,5 +6,25 @@
             <input type="text" class="form-control" placeholder="github username" [(ngModel)]="username" name="github username" (keyup)="findProfile()">
         </div>
     </form>
-    
+
+    <div *ngIf=profile>
+        <div one one-default>
+            <div class="one-head">
+                {{profile.name}} <small>{{profile.login}}</small>
+                <span *ngIf="profile.company">{{profile.company}}</span>{{profile.location}}
+            </div>
+            <div class="one-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="{{profile.avatar.url}}" class="img-responsive"  alt="profile">
+                    </div>
+                    <div class="col-sm-5">
+                        <ul>
+                            <li *ngIf="profile.bio">{{profile.bio}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
